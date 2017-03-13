@@ -1,0 +1,109 @@
+<!-- source/flats/show.html.erb -->
+
+<div class="banner banner-small" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= "../images/#{owner.picture}" %> );"></div>
+
+<div class="header-flat">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="header-flat-details">
+          <div class="header-flat-owner text-center">
+            <%= image_tag owner.owner_picture, class: "img-circle", width:"80" %>
+            <p><%= owner.owner_name.split.first %></p>
+          </div>
+          <div class="header-flat-name">
+            <h1><%= owner.summary %></h1>
+            <p><%= owner.city %></p>
+            <%= "<i class='fa fa-star' style='color: #ffb400'></i> " * owner.rating.to_i %>
+            <%= "<i class='fa fa-star' style='color: #cacccd'></i> " * (5 - owner.rating.to_i) %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <form action="#" >
+          <h4>Book this flat</h3>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-6">
+                <input type="text" class="form-control" placeholder="checkin" id="checkin">
+              </div>
+              <div class="col-xs-6">
+                <input type="text" class="form-control" placeholder="checkout">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <select name="" id="guests" class="form-control">
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+            </select>
+          </div>
+          <input type="submit" class="btn btn-danger" value="Book it" style="width: 100%">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="flat-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h2>About this flat</h2>
+        <p>
+          <%= owner.description %>
+        </p>
+
+        <hr>
+        <div class="row" id="flat-data">
+          <div class="col-xs-12 col-sm-2">
+            The Space
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li>Accommodates:  <strong><%= owner.accommodates %></strong></li>
+              <li>Bathrooms:  <strong><%= owner.bathrooms %></strong></li>
+              <li>Bed type:  <strong><%= owner.bed_type %></strong></li>
+              <li>Bedrooms:  <strong><%= owner.bedrooms %></strong></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li>Beds: <strong><%= owner.beds %></strong></li>
+              <li>Property type: <strong><%= owner.property_type %></strong></li>
+              <li>Room type: <strong><%= owner.room_type %></strong></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="row" id="flat-data">
+          <div class="col-xs-12 col-sm-2">
+            Amenities
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li>
+                <%= owner.kitchen ? "<li><i class='fa fa-cutlery'></i> <strong>Kitchen</strong></li>" : "No kitchen" %>
+              </li>
+              <li>
+                <%= owner.wifi ? "<li><i class='fa fa-wifi'></i> <strong>Wifi</strong></li>" : "No wifi" %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li>
+                <%= owner.tv ? "<li><i class='fa fa-desktop'></i> <strong>TV</strong></li>" : "No TV" %>
+              </li>
+              <li>
+                <%= owner.welcome_drink ? "<li><i class='fa fa-glass'></i> <strong>Welcome drink</strong></li>" : "No welcome drink" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

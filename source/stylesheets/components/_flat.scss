@@ -1,0 +1,25 @@
+.header-flat {
+  padding: 15px 5px;
+
+  h1 {
+    font-size: 1em
+  }
+}
+
+.header-flat-details {
+  display: flex;
+}
+
+.header-flat-owner {
+  margin-right: 15px
+}
+
+#flat-description {
+  background-color: $gray-lighter;
+  font-size: 0.8em;
+  padding: 30px 5px;
+
+  h2 {
+    font-size: 1.2em;
+  }
+}
