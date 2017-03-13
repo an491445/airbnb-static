@@ -1,0 +1,9 @@
+<ul class="list-inline text-center">
+  <h1>Our team</h1>
+  <% ["Matthias", "Anu Maria"].each_with_index do |member, index| %>
+    <li>
+      <h3><%= member %></h3>
+      <%= image_tag "https://www.bunnyholder.com/100/100/#{index+1}", class: "img-circle" %>
+    </li>
+  <% end %>
+</ul>
